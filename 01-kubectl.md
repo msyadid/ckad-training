@@ -1,8 +1,8 @@
 # kubectl - Kubernetes CLI
 
-kubectl config 
+`kubectl config` 
 
-'''
+```
 root@kubeadm-001:~# kubectl config
 Modify kubeconfig files using subcommands like "kubectl config set current-context my-context"
 
@@ -36,5 +36,7 @@ Usage:
 
 Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
-'''
+```
+
+
 
