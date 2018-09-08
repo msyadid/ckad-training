@@ -1,0 +1,31 @@
+apiVersion: v1
+
+# The list of clusters you have access to
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://178.128.29.223:6443
+  name: kubernetes
+
+# Contexts - "user profiles" you can easily switch between.
+# Each context consists of a cluster, an auth user,
+# and a namespace to use by default.
+# These users and clusters are defined below!
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+
+# Your current context
+current-context: kubernetes-admin@kubernetes
+
+kind: Config
+preferences: {}
+
+# Users you can authenticate as
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED

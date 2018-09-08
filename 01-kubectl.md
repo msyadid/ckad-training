@@ -11,7 +11,6 @@ The command `kubectl config lets you interact with configuration settings for yo
 `kubectl config` 
 
 ```
-root@kubeadm-001:~# kubectl config
 Modify kubeconfig files using subcommands like "kubectl config set current-context my-context"
 
 The loading order follows these rules:
@@ -49,7 +48,6 @@ Use "kubectl options" for a list of global command-line options (applies to all 
 `kubectl config view`
 
 ```yaml
-root@kubeadm-001:~# kubectl config view
 apiVersion: v1
 clusters:
 - cluster:
