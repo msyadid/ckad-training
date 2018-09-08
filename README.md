@@ -2,6 +2,6 @@
 
 ## Introduction 
 
-Material to support training on Kubernetes Application Developer 
+Material to support training on Certified Kubernetes Application Developer Training
 
-End Of Section
+*End of Section*
