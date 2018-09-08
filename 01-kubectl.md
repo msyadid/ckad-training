@@ -1,5 +1,13 @@
 # kubectl - Kubernetes CLI
 
+To interact with a Kubernetes cluster, you use the command line tool `kubectl`. 
+
+`kubectl` makes requests to the Kubernetes cluster to manipulate the state of what's running on your cluster.
+
+## kubectl configuration
+
+The command `kubectl config lets you interact with configuration settings for your kubectl client.
+
 `kubectl config` 
 
 ```
@@ -38,5 +46,27 @@ Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
 
+`kubectl config view`
 
-
+```yaml
+root@kubeadm-001:~# kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://178.128.29.223:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+kind: Config
+preferences: {}
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+```
