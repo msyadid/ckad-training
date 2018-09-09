@@ -1,3 +1,7 @@
+# Example, kubectl explain pod.spec.volumes gives you a
+# description of what volumes mean for a pod, which apiVersion to use,
+# plus all of the fields available for an entry in your volumes list.
+
 KIND:     Pod
 VERSION:  v1
 
