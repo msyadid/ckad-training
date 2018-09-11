@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
     - name: node-welcome-app
-      image: node-welcome-app:0.1
+      image: jamesbuckett/node-welcome-app:0.1
