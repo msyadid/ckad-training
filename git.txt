@@ -1,8 +1,14 @@
+Scratch Pad
+
 
 git add .
 
 git commit -am "Updated Files"
 
 git push
+
+docker system prune 
+
+
 
 
