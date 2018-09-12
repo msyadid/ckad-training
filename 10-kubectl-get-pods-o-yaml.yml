@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+...
+status:
+...
+  containerStatuses:
+  - containerID: docker://5c3ca7af5fd0e1f3ed25428893f28862ac6067a101c6a2456ac7c7579de7d844
+    image: jamesbuckett/node-welcome-app:v0.1
+    imageID: docker-pullable://jamesbuckett/node-welcome-app@sha256:d4cfabe28ec76b6fe3b3f805bd59afda6a34766cfbe486de514a8e80115e0c15
+    lastState: {}
+    name: node-welcome-app
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: 2018-09-12T03:34:11Z

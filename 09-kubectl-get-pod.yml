@@ -1,0 +1,2 @@
+NAME           READY     STATUS    RESTARTS   AGE
+my-first-pod   1/1       Running   0          7m

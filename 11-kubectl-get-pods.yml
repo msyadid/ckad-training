@@ -1,0 +1,44 @@
+Name:         my-first-pod
+Namespace:    default
+Node:         docker-for-desktop/192.168.65.3
+Start Time:   Wed, 12 Sep 2018 13:34:10 +1000
+Labels:       <none>
+Annotations:  <none>
+Status:       Running
+IP:           10.1.0.32
+Containers:
+  node-welcome-app:
+    Container ID:   docker://5c3ca7af5fd0e1f3ed25428893f28862ac6067a101c6a2456ac7c7579de7d844
+    Image:          docker.io/jamesbuckett/node-welcome-app:v0.1
+    Image ID:       docker-pullable://jamesbuckett/node-welcome-app@sha256:d4cfabe28ec76b6fe3b3f805bd59afda6a34766cfbe486de514a8e80115e0c15
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 12 Sep 2018 13:34:11 +1000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-7zfbk (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          True 
+  PodScheduled   True 
+Volumes:
+  default-token-7zfbk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-7zfbk
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason                 Age   From                         Message
+  ----    ------                 ----  ----                         -------
+  Normal  Scheduled              8m    default-scheduler            Successfully assigned my-first-pod to docker-for-desktop
+  Normal  SuccessfulMountVolume  8m    kubelet, docker-for-desktop  MountVolume.SetUp succeeded for volume "default-token-7zfbk"
+  Normal  Pulled                 8m    kubelet, docker-for-desktop  Container image "docker.io/jamesbuckett/node-welcome-app:v0.1" already present on machine
+  Normal  Created                8m    kubelet, docker-for-desktop  Created container
+  Normal  Started                8m    kubelet, docker-for-desktop  Started container
