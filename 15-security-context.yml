@@ -6,7 +6,7 @@ spec:
   securityContext:
     # User ID that containers in this pod should use
     runAsUser: 45
-    # Gropu ID for filesystem access
+    # Group ID for filesystem access
     fsGroup: 231
   volumes:
     - name: simple-directory
