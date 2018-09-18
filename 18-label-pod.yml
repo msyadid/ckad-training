@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+# Metadata - Meta-information about the object itself
+metadata:
+  name: my-pod
+  # Define labels for the pod
+  labels:
+    release: stable
+    environment: dev
+    tier: backend
+    region: us
+
+spec:
+# ...
