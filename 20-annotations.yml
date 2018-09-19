@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: my-pod
+  labels:
+    # ...
+  annotations:
+    commit: 6da32faca
+    logs: 'http://logservice.com/oirewnj'
+    contact: 'Matthew Palmer <matt@matthewpalmer.net>'
+
+spec:
+# ...
