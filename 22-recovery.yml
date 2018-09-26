@@ -1,0 +1,20 @@
+jamesbuckett@DESKTOP-4NCBKBV:~/ckad-training$ kubectl get po
+NAME                                READY     STATUS    RESTARTS   AGE
+nginx-deployment-6b979c859f-5tj2w   1/1       Running   0          23m
+nginx-deployment-6b979c859f-mh52b   1/1       Running   0          23m
+nginx-deployment-6b979c859f-t9t9d   1/1       Running   0          23m
+
+jamesbuckett@DESKTOP-4NCBKBV:~/ckad-training$ kubectl delete po nginx-deployment-6b979c859f-5tj2w
+pod "nginx-deployment-6b979c859f-5tj2w" deleted
+
+jamesbuckett@DESKTOP-4NCBKBV:~/ckad-training$ kubectl get po
+NAME                                READY     STATUS              RESTARTS   AGE
+nginx-deployment-6b979c859f-gv8hz   0/1       ContainerCreating   0          5s
+nginx-deployment-6b979c859f-mh52b   1/1       Running             0          24m
+nginx-deployment-6b979c859f-t9t9d   1/1       Running             0          24m
+
+jamesbuckett@DESKTOP-4NCBKBV:~/ckad-training$ kubectl get po
+NAME                                READY     STATUS    RESTARTS   AGE
+nginx-deployment-6b979c859f-gv8hz   1/1       Running   0          11s
+nginx-deployment-6b979c859f-mh52b   1/1       Running   0          24m
+nginx-deployment-6b979c859f-t9t9d   1/1       Running   0          24m
