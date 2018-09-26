@@ -1,0 +1,10 @@
+NAME                                    READY     STATUS    RESTARTS   AGE
+pod/nginx-deployment-6b979c859f-5tj2w   1/1       Running   0          7m
+pod/nginx-deployment-6b979c859f-mh52b   1/1       Running   0          7m
+pod/nginx-deployment-6b979c859f-t9t9d   1/1       Running   0          7m
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   17d
+NAME                               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-deployment   3         3         3            3           7m
+NAME                                          DESIRED   CURRENT   READY     AGE
+replicaset.apps/nginx-deployment-6b979c859f   3         3         3         7m
