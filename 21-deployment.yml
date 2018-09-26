@@ -8,3 +8,9 @@ NAME                               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   
 deployment.apps/nginx-deployment   3         3         3            3           7m
 NAME                                          DESIRED   CURRENT   READY     AGE
 replicaset.apps/nginx-deployment-6b979c859f   3         3         3         7m
+
+Kubernetes has created three replicas of our nginx pod, and all of them are available. 
+
+Notice the DESIRED, CURRENT, and AVAILABLE columns.
+
+If any of these contain different numbers, Kubernetes will enact changes to reconcile the current state with the desired state.
