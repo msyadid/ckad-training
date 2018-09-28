@@ -1,0 +1,78 @@
+kubectl rollout history deployment
+deployments "nginx-deployment"
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
+kubectl rollout history deployment nginx-deployment --revision=2
+deployments "nginx-deployment" with revision #2
+Pod Template:
+  Labels:	app=nginx
+	pod-template-hash=80335452
+  Containers:
+   nginx:
+    Image:	nginx:1.15.0
+    Port:	<none>
+    Host Port:	<none>
+    Environment:	<none>
+    Mounts:	<none>
+  Volumes:	<none>
+
+kubectl rollout history deployment nginx-deployment --revision=1
+deployments "nginx-deployment" with revision #1
+Pod Template:
+  Labels:	app=nginx
+	pod-template-hash=1543008064
+  Containers:
+   nginx:
+    Image:	nginx:1.7.9
+    Port:	<none>
+    Host Port:	<none>
+    Environment:	<none>
+    Mounts:	<none>
+  Volumes:	<none>
+
+kubectl describe deployments nginx-deployment 
+deployment.extensions/nginx-deployment
+Name:                   nginx-deployment
+Namespace:              default
+CreationTimestamp:      Fri, 28 Sep 2018 16:42:05 +1000
+Labels:                 app=nginx
+Annotations:            deployment.kubernetes.io/revision=3
+                        kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"annotations":{},"name":"nginx-deployment","namespace":"default"},"spec":{"replicas"...
+Selector:               app=nginx
+Replicas:               5 desired | 5 updated | 5 total | 5 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  1 max unavailable, 2 max surge
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   nginx:
+    Image:        nginx:1.7.9
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   nginx-deployment-598744d4b8 (5/5 replicas created)
+Events:
+  Type    Reason              Age               From                   Message
+  ----    ------              ----              ----                   -------
+  Normal  ScalingReplicaSet   4m                deployment-controller  Scaled up replica set nginx-deployment-598744d4b8 to 5
+  Normal  ScalingReplicaSet   4m                deployment-controller  Scaled up replica set nginx-deployment-d4779896 to 2
+  Normal  ScalingReplicaSet   4m                deployment-controller  Scaled down replica set nginx-deployment-598744d4b8 to 4
+  Normal  ScalingReplicaSet   4m                deployment-controller  Scaled up replica set nginx-deployment-d4779896 to 3
+  Normal  ScalingReplicaSet   3m                deployment-controller  Scaled down replica set nginx-deployment-598744d4b8 to 3
+  Normal  ScalingReplicaSet   3m                deployment-controller  Scaled up replica set nginx-deployment-d4779896 to 4
+  Normal  ScalingReplicaSet   3m                deployment-controller  Scaled down replica set nginx-deployment-598744d4b8 to 2
+  Normal  ScalingReplicaSet   3m                deployment-controller  Scaled up replica set nginx-deployment-d4779896 to 5
+  Normal  ScalingReplicaSet   3m                deployment-controller  Scaled down replica set nginx-deployment-598744d4b8 to 1
+  Normal  DeploymentRollback  2m                deployment-controller  Rolled back deployment "nginx-deployment" to revision 1
+  Normal  ScalingReplicaSet   2m (x10 over 3m)  deployment-controller  (combined from similar events): Scaled down replica set nginx-deployment-d4779896 to 0
