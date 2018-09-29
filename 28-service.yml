@@ -1,76 +1,18 @@
-# Create two fleets of our `nginx-hostname` application.
-# The original deployment has three replicas of v1.0.1 of the application
-# The second deployment has a single replica of v.1.0.2 of the application
-# We'll expose access to *both* deployments via a single service
-# that matches on the label `application: hostname`
-
-kind: Deployment
-apiVersion: extensions/v1beta1
-metadata:
-  name: hostname-101-deployment
-spec:
-  replicas: 3
-  selector:
-    # Like saying "Make sure there are three pods running with the labels
-    # application = hostname and version = v101"
-    matchLabels:
-      application: hostname
-      version: v101
-  template:
-    metadata:
-      labels:
-        # The `application` label is used by both the service and the deployment
-        # to select the pods they operate on.
-        application: hostname
-        # The `version` label is used only by the deployment to control replication.
-        version: v101
-    spec:
-      containers:
-        - name: nginx-hostname
-          image: kubegoldenguide/nginx-hostname:1.0.1
-          ports:
-            - containerPort: 80
-
----
-
-# Second deployment: a single replica of v1.0.2 of the application
-
-kind: Deployment
-apiVersion: extensions/v1beta1
-metadata:
-  name: hostname-102-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      application: hostname
-      version: v102
-  template:
-    metadata:
-      labels:
-        application: hostname
-        version: v102
-    spec:
-      containers:
-        - name: nginx-hostname
-          image: kubegoldenguide/nginx-hostname:1.0.2
-          ports:
-            - containerPort: 80
-
----
-
-# Expose both deployments using a single service!
-
 kind: Service
 apiVersion: v1
 metadata:
   name: hostname-service
 spec:
-  selector:
-    # Equivalent to "select any pod where the label application = hostname"
-    application: hostname
+  # Expose the service on a static port on each node
+  # so that we can access the service from outside the cluster
   type: NodePort
+  selector:
+    app: echo-hostname
   ports:
-    - port: 8080
+  # Three types of ports for a service
+  # nodePort - a static port assigned on each the node
+  # port - port exposed internally in the cluster
+  # targetPort - the container port to send requests to
+    - nodePort: 30163
+      port: 8080
       targetPort: 80
-
