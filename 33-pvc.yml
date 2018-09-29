@@ -1,0 +1,17 @@
+# Declares a claim to use the persistent volume 
+# defined in pv.yaml.
+# The pod in pod.yaml will eventually use this
+# persistent volume claim when mounting the volume.
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: my-small-pvc
+spec:
+  # "Give me a persistent volume with at least
+  # 64MB of space where I can read and write."
+  resources:
+    requests:
+      storage: 64M
+  accessModes:
+    - ReadWriteOnce

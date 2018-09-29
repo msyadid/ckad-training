@@ -1,0 +1,27 @@
+# Notice that if you delete and recreate this 
+# pod, your previous files will persist on the 
+# minikube cluster!
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pv-pod
+spec:
+  volumes:
+    # This volume is of type persistentVolumeClaim -- i.e.
+    # we need a persistent volume.
+    - name: a-persistent-volume
+      persistentVolumeClaim:
+        # Must match claim name from pvc.yaml
+        claimName: my-small-pvc
+
+  # Mount the volume into the container and use it
+  containers:
+    - name: pv-user
+      volumeMounts:
+        - name: a-persistent-volume
+          mountPath: /var/forever
+      
+      image: alpine
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do date >> /var/forever/file.txt; sleep 5; done"]

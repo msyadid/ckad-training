@@ -19,7 +19,7 @@ spec:
       ports:
         # nginx runs on port 80 inside its container
         - containerPort: 80
-# ---
+---
 kind: Pod
 apiVersion: v1
 metadata:
