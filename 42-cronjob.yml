@@ -1,0 +1,36 @@
+kind: CronJob
+apiVersion: batch/v1beta1
+metadata:
+  name: google-check-cronjob
+spec:
+  # CronJob configuration -- uses cron syntax
+  # to specify job schedule. In this case, run every minute.
+  # (I always use cronmaker.com because it's not worth the
+  # effort to learn cron syntax.)
+  schedule: "*/1 * * * *"
+
+  # How many completed jobs we want to keep around.
+  # Let's keep the last ten minutes' jobs.
+  successfulJobsHistoryLimit: 10
+
+  # The job to be created every minute. This reuses
+  # configuration format for regular jobs.
+  jobTemplate:
+    metadata:
+      name: google-check-job
+    spec:
+      # The pod to be created to execute the job
+      template:
+        metadata:
+          name: google-check-pod
+        spec:
+          # OnFailure = Re-run a failed container in the same pod
+          restartPolicy: OnFailure
+
+          # This container checks that Google is up, just in case
+          # no one notices.
+          containers:
+            - name: google-check-container
+              image: alpine
+              command: ["/bin/sh"]
+              args: ["-c", "ping -w 1 google.com"]
