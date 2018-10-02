@@ -1,0 +1,24 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-two
+  namespace: red-team
+spec:
+  # This pod is identical to `pod-one` except that it has a 
+  # slightly lower minimum memory requirement.
+  # 
+  # If created after pod-one, this pod will fail!
+  # This is because in their memory `requests`,
+  # pod-one requires 768m, pod-two requires 512m,
+  # but the resource quota defines the `requests.memory` cap at 1Gi.
+  containers:
+    - name: nginx-pod-two
+      image: nginx:1.7.9
+      resources:
+        # At least 512m of memory is required for this pod.
+        requests:
+          memory: 512m
+          cpu: "0.5"
+        limits:
+          memory: 1024m
+          cpu: "2"

@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-illegal
+  # Important! Create this pod in the right namespace for our team.
+  namespace: red-team
+spec:
+  # This pod will fail to be created because it doesn't have
+  # the `request` property set -- this is required by 
+  # our resource quota.
+  #
+  # Error from server (Forbidden): error when creating 
+  # "pod-illegal.yaml": pods "pod-illegal" is forbidden: 
+  # failed quota: red-team-resource-quota: must specify 
+  # requests.cpu,requests.memory,limits.cpu,limits.memory
+  containers:
+    - name: nginx-illegal
+      image: nginx:1.7.9
