@@ -2,6 +2,6 @@
 
 ## Introduction 
 
-Material to support knowledge sharing on Certified Kubernetes Application Developer Training
+Material to support knowledge sharing on the Certified Kubernetes Application Developer certification.
 
 *End of Section*
