@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: my-first-pod
+  namespace: ckad
 spec:
   containers:
     - name: node-welcome-app
