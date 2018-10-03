@@ -1,7 +1,7 @@
-# Certified Kubernetes Application Developer Training
+# Certified Kubernetes Application Developer Knowledge Sharing
 
 ## Introduction 
 
-Material to support training on Certified Kubernetes Application Developer Training
+Material to support knowledge sharing on Certified Kubernetes Application Developer Training
 
 *End of Section*
