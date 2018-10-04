@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: pod-env-var
+  namespace: ckad
 spec:
   containers:
     - name: env-var-configmap

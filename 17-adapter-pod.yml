@@ -27,6 +27,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-with-adapter
+  namespace: ckad
 spec:
   # Create a volume called 'shared-logs' that the
   # app and adapter share.

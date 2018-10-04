@@ -8,6 +8,7 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: hostname-101-deployment
+  namespace: ckad
 spec:
   replicas: 3
   selector:
@@ -39,6 +40,7 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: hostname-102-deployment
+  namespace: ckad
 spec:
   replicas: 1
   selector:

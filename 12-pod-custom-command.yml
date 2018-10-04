@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: custom-command-pod
+  namespace: ckad
 spec:
   containers:
     - name: command-container

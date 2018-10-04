@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: security-context-pod
+  namespace: ckad
 spec:
   securityContext:
     # User ID that containers in this pod should use

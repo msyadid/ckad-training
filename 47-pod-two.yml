@@ -2,7 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: pod-two
-  namespace: red-team
+  namespace: ckad-example
 spec:
   # This pod is identical to `pod-one` except that it has a 
   # slightly lower minimum memory requirement.

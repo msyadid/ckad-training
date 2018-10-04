@@ -6,6 +6,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: my-pv-pod
+  namespace: ckad
 spec:
   volumes:
     # This volume is of type persistentVolumeClaim -- i.e.

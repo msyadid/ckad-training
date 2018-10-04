@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: nginx-deployment
+  namespace: ckad
 spec:
   # A deployment's specification really only 
   # has a few useful options

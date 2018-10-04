@@ -7,6 +7,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: hostname-pod-101
+  namespace: ckad
   labels:
     # These labels are used by the service to select
     # pods that can handle its network requests
@@ -24,6 +25,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: hostname-pod-102
+  namespace: ckad
   labels:
     app: echo-hostname
     app-version: v102

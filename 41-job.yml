@@ -2,6 +2,7 @@ kind: Job
 apiVersion: batch/v1
 metadata:
   name: dice-job
+  namespace: ckad
 spec:
   # At least one pod should exit successfully, and only
   # one pod should run at a time.

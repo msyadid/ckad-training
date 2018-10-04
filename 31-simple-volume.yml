@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: simple-volume-pod
+  namespace: ckad
 spec:
   # Volumes are declared by the pod. They share its lifecycle
   # and are communal across containers.

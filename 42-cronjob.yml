@@ -2,6 +2,7 @@ kind: CronJob
 apiVersion: batch/v1beta1
 metadata:
   name: google-check-cronjob
+  namespace: ckad
 spec:
   # CronJob configuration -- uses cron syntax
   # to specify job schedule. In this case, run every minute.

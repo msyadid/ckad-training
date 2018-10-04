@@ -1,5 +1,5 @@
 # kubectl config set-context $(kubectl config current-context) --namespace=ckad
-# kubectl config view | grep namespace:`
+# kubectl config view | grep namespace:
 
 kind: Namespace
 apiVersion: v1

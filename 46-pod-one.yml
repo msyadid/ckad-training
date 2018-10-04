@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: pod-one
   # Important! Create this pod in the right namespace for our team.
-  namespace: red-team
+  namespace: ckad-example
 spec:
   containers:
     - name: nginx-pod-one

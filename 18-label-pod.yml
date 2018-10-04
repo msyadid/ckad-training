@@ -4,6 +4,7 @@ kind: Pod
 # Metadata - Meta-information about the object itself
 metadata:
   name: my-pod
+  namespace: ckad
   # Define labels for the pod
   labels:
     release: stable

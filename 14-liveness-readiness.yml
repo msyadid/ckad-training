@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: liveness-readiness-pod
+  namespace: ckad
 spec:
   containers:
     - name: server

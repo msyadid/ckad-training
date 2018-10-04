@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: environment-variables
+  namespace: ckad
 spec:
   containers:
     - name: env-var-container

@@ -3,6 +3,7 @@ kind: Pod
 
 metadata:
   name: my-pod
+  namespace: ckad
   labels:
     # ...
   annotations:

@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: pod-using-configmap
+  namespace: ckad
 spec:
   # Add the ConfigMap as a volume to the Pod
   volumes:

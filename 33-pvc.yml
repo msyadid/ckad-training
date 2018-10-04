@@ -7,6 +7,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: my-small-pvc
+  namespace: ckad
 spec:
   # "Give me a persistent volume with at least
   # 64MB of space where I can read and write."
